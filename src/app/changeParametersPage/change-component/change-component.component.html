@@ -1,0 +1,6 @@
+<div *ngIf="id && typeRequest == 'detail'">
+    <app-change-detail [idOfDetail]="id"></app-change-detail>
+</div>
+<div *ngIf="id && typeRequest == 'parameter'">
+    <app-change-parameter [idOfParameter]="id"></app-change-parameter>
+</div>

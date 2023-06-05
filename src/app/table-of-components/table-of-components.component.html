@@ -1,0 +1,46 @@
+<div [ngClass]="{'opacity-50' : deleteItem.id}">
+  <div class="w-full flex justify-end"><input class="border border-zinc-500 p-1 rounded" placeholder="Search component..." type="text" (input)="searchInputChange()" [(ngModel)]="searchInput"></div>
+  <table class="table-auto w-full">
+    <thead>
+      <tr class="text-left">
+        <th>#</th>
+        <th class="p-3">Title</th>
+        <th class="p-3">Description</th>
+        <th class="p-3">Component code</th>
+        <th class="p-3">Note</th>
+        <th class="p-3"></th>
+      </tr>
+    </thead>
+    <tbody *ngIf="components" id="databaseContents">
+      <tr *ngFor="let component of searchedComponents; let i = index" class="hover:bg-gray-100 cursor-pointer">
+        <td class="border-t-2 p-3" (click)="itemClicked(component.id)">{{i + 1}}</td>
+        <td class="border-t-2 p-3" (click)="itemClicked(component.id)">{{component.title}}</td>
+        <td class="border-t-2 p-3" (click)="itemClicked(component.id)">{{component.description}}</td>
+        <td class="border-t-2 p-3" (click)="itemClicked(component.id)">{{component.componentCode}}</td>
+        <td class="border-t-2 p-3" (click)="itemClicked(component.id)">{{component.notes}}</td>
+        <td class="border-t-2 p-3"> <div class="flex w-6"> <img class="mr-3" (click)="changeComponent(component.id)" src="{{this.location}}assets/icons/pen.png"> <img (click)="deleteComponent(component.id)" src="{{this.location}}assets/icons/recycle-bin.png"> </div> </td>
+      </tr>
+      <tr class="hover:bg-gray-100 cursor-pointer col-span-3" (click)="addComponent()">
+        <td colspan="6" class="border-t-2 p-3">+ Add component</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="!components">
+  Loading...
+</div>
+
+<div *ngIf="deleteItem.id" class="absolute top-0 left-0 w-full h-full flex justify-center items-center">
+  <div class="mx-auto bg-slate-200 p-10 rounded">
+    <div>
+      Are you sure do you want delete item "<span class="font-bold">{{deleteItem.title}}</span>"?
+      <br><br>
+      ({{deleteItem.title}} - {{deleteItem.description}} - {{deleteItem.componentCode}})
+    </div>
+    <div class="flex justify-between mt-6">
+      <input class="py-3 px-6 border border-red-500 rounded text-red-500 cursor-pointer hover:underline" type="button" value="Yes" (click)="confirmDeleteComponent(deleteItem.id)">
+      <input class="py-3 px-6 border border-black rounded cursor-pointer" type="button" value="No" (click)="cancelDelete()">
+    </div>
+  </div>
+</div>

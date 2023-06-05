@@ -37,7 +37,9 @@ export class ChangeDetailComponent implements OnInit {
   }
 
   confirmCancel() {
-    this.route.navigate([`/componentDetails/${this.detailToChange.fk}`])
+    this.route.navigate([`/componentDetails/${this.detailToChange.fk}`], {
+      skipLocationChange: true,
+    })
   }
 
   returnToChanges() {
@@ -53,7 +55,9 @@ export class ChangeDetailComponent implements OnInit {
       this.changeDetailInfo.value.greenLimit,
       this.changeDetailInfo.value.yellowLimit
     )).then(() => {
-      this.route.navigate(['componentDetails/' + this.detailToChange.fk])
+      this.route.navigate(['componentDetails/' + this.detailToChange.fk], {
+        skipLocationChange: true,
+      })
     });
   }
 }

@@ -41,7 +41,9 @@ export class TableOfComponentsComponent implements OnInit {
   }
 
   itemClicked(_id: number) {
-    this.router.navigate([`/componentDetails/${_id}`]);
+    this.router.navigate([`/componentDetails/${_id}`], {
+      skipLocationChange: true,
+    });
   }
 
   deleteComponent(_id: number) {
@@ -64,11 +66,15 @@ export class TableOfComponentsComponent implements OnInit {
   }
 
   changeComponent(_id: number) {
-    this.router.navigate([`/change/parameter/${_id}`]);
+    this.router.navigate([`/change/parameter/${_id}`], {
+      skipLocationChange: true,
+    });
   }
 
   addComponent() {
-    this.router.navigate([`/addComponent`]);
+    this.router.navigate([`/addComponent`], {
+      skipLocationChange: true,
+    });
   }
 
   searchInputChange() {

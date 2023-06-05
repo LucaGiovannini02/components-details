@@ -53,7 +53,7 @@ export class ComponentsService {
   }
 
   async addComponent(_title: string, _description: string, _componentCode: string, _note: string) {
-    await this.http.post(`${this.linkRootApi}api/Components/InsertNewComponent`, {
+    await Promise.resolve(this.http.post(`${this.linkRootApi}api/Components/InsertNewComponent`, {
       "id": 0,
       "device": _description,
       "task": _title,
@@ -61,7 +61,7 @@ export class ComponentsService {
       "productItem": _componentCode,
       "note": _note,
       "pathimage": ""
-    }, {responseType: 'text'}).subscribe((data) => {console.log(data)});
+    }, {responseType: 'text'}).subscribe((data) => {console.log(data)}));
   }
 
   getDetailsOfAnElement(_id: number) {
@@ -122,14 +122,11 @@ export class ComponentsService {
     
 
   async deleteDetails(_id: number) {
-    await Promise.resolve(this.http.delete(`${this.linkRootApi}api/Details/DeleteDetails?IdDetail=${_id}`, {responseType: 'text'}).subscribe()).then((response) => {
-      Promise.resolve(this.getDetails()).then(() => {
-      });
-    })
+    await this.http.delete(`${this.linkRootApi}api/Details/DeleteDetails?IdDetail=${_id}`, {responseType: 'text'}).toPromise().then();
   }
 
   async addParameter(_title: string, _parameter: string, _value: number, _fk: number, _note: string, _greenLimit: number, _yellowLimit: number) {
-    await Promise.resolve(this.http.post(`${this.linkRootApi}api/Details/InsertNewDetail`, {
+    await this.http.post(`${this.linkRootApi}api/Details/InsertNewDetail`, {
       "id": 0,
       "parameter": _parameter,
       "description": _title,
@@ -139,14 +136,13 @@ export class ComponentsService {
       "note": _note,
       "greenLimit": _greenLimit,
       "yellowLimit": _yellowLimit
-    }, {responseType: 'text'}).subscribe((result) => {
-    })).then();
+    }, {responseType: 'text'}).toPromise().then();
   }
 
-  changeComponent(_id: number, _device: string, _task: string, _dateEntry: Date, _productItem: string, _note: string) {
+  async changeComponent(_id: number, _device: string, _task: string, _dateEntry: Date, _productItem: string, _note: string) {
     const header = new HttpHeaders({'Content-Type': 'application/json'});
 
-    this.http.patch(`${this.linkRootApi}api/Components/ModifyComponent`, {
+    await Promise.resolve(this.http.patch(`${this.linkRootApi}api/Components/ModifyComponent`, {
       "id": _id,
       "device": _device,
       "task": _task,
@@ -154,7 +150,7 @@ export class ComponentsService {
       "productItem": _productItem,
       "note": _note,
       "pathImage": ""
-    }, {headers: header, responseType: 'text'}).subscribe((data) => console.log());
+    }, {headers: header, responseType: 'text'}).subscribe());
   }
 
   changeDetail(_id: number, _parameter: string, _description: string, _note: string, _greenLimit: number, _yellowLimit: number) {

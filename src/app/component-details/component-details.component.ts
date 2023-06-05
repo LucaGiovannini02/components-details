@@ -51,11 +51,12 @@ export class ComponentDetailsComponent implements OnInit {
   async confirmDeleteComponent(_id: number) {
     await Promise.resolve(this.service.deleteDetails(_id)).then(() => {
       this.deleteDetail.id = NaN;
-      Promise.resolve(this.service.getDetailsOfAnElementNew(Number(this.id))).then((data: any) => {
-        this.arrayOfDetails = (data as Details).details;
-        this.searchedDetails = this.arrayOfDetails;
-      })
     });
+
+    Promise.resolve(this.service.getDetailsOfAnElementNew(Number(this.id))).then((data: any) => {
+      this.arrayOfDetails = (data as Details).details;
+      this.searchedDetails = this.arrayOfDetails;
+    })
   }
 
   cancelDelete() {
@@ -63,11 +64,15 @@ export class ComponentDetailsComponent implements OnInit {
   }
 
   changeDetail(_id: number) {
-    this.router.navigate([`/change/detail/${_id}`]);
+    this.router.navigate([`/change/detail/${_id}`], {
+      skipLocationChange: true,
+    });
   }
 
   addComponent() {
-    this.router.navigate([`/addParameter/${this.id}`]);
+    this.router.navigate([`/addParameter/${this.id}`], {
+      skipLocationChange: true,
+    });
   }
 
   searchInputChange() {
@@ -91,7 +96,9 @@ export class ComponentDetailsComponent implements OnInit {
   }
 
   goInHomePage() {
-    this.router.navigate(['..']);
+    this.router.navigate(['..'], {
+      skipLocationChange: true,
+    });
   }
 }
 

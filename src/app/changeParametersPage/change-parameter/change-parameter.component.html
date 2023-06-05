@@ -1,6 +1,6 @@
 <div *ngIf="componentToChange.title != ''">
     <div [ngClass]="{'opacity-50':cancelChanges}" class="w-full h-full flex justify-center items-center">
-        <form class="bg-slate-200 p-6 w-1/2 rounded h-min" [formGroup]="changeDetailInfo" (ngSubmit)="onSubmit()">
+        <form class="bg-slate-200 p-6 w-3/4 rounded h-min" [formGroup]="changeDetailInfo" (ngSubmit)="onSubmit()">
             <div class="mb-3">
                 <div class="font-bold">Title:</div>
                 <div><input type="text" class="mb-3 rounded w-full" formControlName="title" placeholder="(Ex. 'Motor', 'Sensore' or other...)"></div>
@@ -10,7 +10,7 @@
                 <div><input type="text" class="mb-3 rounded w-full" formControlName="description" placeholder="(Ex. 'Big piece', 'Right of the machine' or other...)"></div>
             </div>
             <div class="mb-3">
-                <div class="font-bold">Parameter:</div>
+                <div class="font-bold">Component code:</div>
                 <div><input type="text" class="mb-3 rounded w-full" formControlName="componentCode" placeholder="(Ex. 'X9PO3', 'hf4s2' or other...)"></div>
             </div>
             <div class="mb-3">

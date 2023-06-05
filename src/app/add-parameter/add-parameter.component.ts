@@ -42,13 +42,16 @@ export class AddParameterComponent {
       this.addParameterForm.value.greenLimit, 
       this.addParameterForm.value.yellowLimit
     )).then(() => {
-      this.router.navigate([`/componentDetails/${this.FK}`]);
+      this.router.navigate([`/componentDetails/${this.FK}`], {
+        skipLocationChange: true,
+      });
     });
   }
 
   confirmCancel() {
-    this.router.navigate([`/componentDetails/${this.FK}`
-  ])
+    this.router.navigate([`/componentDetails/${this.FK}`], {
+      skipLocationChange: true,
+    })
   }
 
   returnToChanges() {

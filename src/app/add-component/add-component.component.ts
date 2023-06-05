@@ -31,12 +31,16 @@ export class AddComponentComponent implements OnInit {
       this.addComponentForm.value.componentCode,
       this.addComponentForm.value.notes,
     )).then(() => {
-      this.router.navigate(['/'])
+      this.router.navigate(['/'], {
+        skipLocationChange: true,
+      })
     });
   }
 
   confirmCancel() {
-    this.router.navigate(['/'])
+    this.router.navigate(['/'], {
+      skipLocationChange: true,
+    })
   }
 
   returnToChanges() {

@@ -36,7 +36,9 @@ export class ChangeParameterComponent {
   }
 
   confirmCancel() {
-    this.route.navigate([`/`])
+    this.route.navigate([`/`], {
+      skipLocationChange: true,
+    })
   }
 
   returnToChanges() {
@@ -52,7 +54,9 @@ export class ChangeParameterComponent {
       this.changeDetailInfo.value['componentCode'],
       this.changeDetailInfo.value['notes'],
     )).then(() => {
-      this.route.navigate([window.location.origin])
+      this.route.navigate([`/`], {
+        skipLocationChange: true,
+      })
     });
   }
 }

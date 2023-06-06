@@ -1,14 +1,14 @@
 <div [ngClass]="{'opacity-50' : deleteItem.id}">
   <div class="w-full flex justify-end"><input class="border border-zinc-500 p-1 rounded" placeholder="Search component..." type="text" (input)="searchInputChange()" [(ngModel)]="searchInput"></div>
-  <table class="table-auto w-full">
+  <table class="table-fixed w-full">
     <thead>
       <tr class="text-left">
-        <th>#</th>
-        <th class="p-3">Title</th>
-        <th class="p-3">Description</th>
-        <th class="p-3">Component code</th>
-        <th class="p-3">Note</th>
-        <th class="p-3"></th>
+        <th class="w-1/12">#</th>
+        <th class="p-3 w-2/12">Title</th>
+        <th class="p-3 w-3/12">Description</th>
+        <th class="p-3 w-2/12">Component code</th>
+        <th class="p-3 w-3/12">Note</th>
+        <th class="p-3 w-1/12"></th>
       </tr>
     </thead>
     <tbody *ngIf="components" id="databaseContents">

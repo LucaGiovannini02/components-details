@@ -23,6 +23,8 @@ export class TableOfComponentsComponent implements OnInit {
   idOfComponent: number = 1;
   searchInput: string = '';
 
+  loaded: boolean = false;
+
   components: MyComponent[] = new Array<MyComponent>();
   searchedComponents: MyComponent[] = new Array<MyComponent>();
 
@@ -32,12 +34,17 @@ export class TableOfComponentsComponent implements OnInit {
 
     document.getElementById('databaseContents')?.remove();
 
-    this.components = new Array<MyComponent>();
+    // this.components = new Array<MyComponent>();
 
-    Promise.resolve(this.componentService.getComponents()).then((data: MyComponent[]) => {
+    
+    Promise.resolve(this.componentService.getComponents()).then((data: any) => {
       this.components = data;
-      this.searchedComponents = this.components;
+      this.searchedComponents = data;
+
+      this.loaded = true;
     });
+
+    
   }
 
   itemClicked(_id: number) {

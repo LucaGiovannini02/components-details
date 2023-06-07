@@ -13,6 +13,7 @@ import { ChangeDetailComponent } from './changeParametersPage/change-detail/chan
 import { ChangeParameterComponent } from './changeParametersPage/change-parameter/change-parameter.component';
 import { AddParameterComponent } from './add-parameter/add-parameter.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

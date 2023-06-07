@@ -142,7 +142,7 @@ export class ComponentsService {
   async changeComponent(_id: number, _device: string, _task: string, _dateEntry: Date, _productItem: string, _note: string) {
     const header = new HttpHeaders({'Content-Type': 'application/json'});
 
-    await Promise.resolve(this.http.patch(`${this.linkRootApi}api/Components/ModifyComponent`, {
+    await this.http.patch(`${this.linkRootApi}api/Components/ModifyComponent`, {
       "id": _id,
       "device": _device,
       "task": _task,
@@ -150,13 +150,13 @@ export class ComponentsService {
       "productItem": _productItem,
       "note": _note,
       "pathImage": ""
-    }, {headers: header, responseType: 'text'}).subscribe());
+    }, {headers: header, responseType: 'text'}).toPromise().then();
   }
 
-  changeDetail(_id: number, _parameter: string, _description: string, _note: string, _greenLimit: number, _yellowLimit: number) {
+  async changeDetail(_id: number, _parameter: string, _description: string, _note: string, _greenLimit: number, _yellowLimit: number) {
     const header = new HttpHeaders({'Content-Type': 'application/json'});
 
-    this.http.patch(`${this.linkRootApi}api/Details/ModifyDetail`, {
+    await this.http.patch(`${this.linkRootApi}api/Details/ModifyDetail`, {
       "id": _id,
       "parameter": _parameter,
       "description": _description,
@@ -165,7 +165,7 @@ export class ComponentsService {
       "note": _note,
       "greenLimit": _greenLimit,
       "yellowLimit": _yellowLimit
-    }, {headers: header, responseType: 'text'}).subscribe((data) => console.log(data));
+    }, {headers: header, responseType: 'text'}).toPromise().then();
   }
 
 

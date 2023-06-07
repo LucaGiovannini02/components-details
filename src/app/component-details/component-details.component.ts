@@ -19,6 +19,8 @@ export class ComponentDetailsComponent implements OnInit {
   searchInput: string = '';
   searchedDetails!: any[];
   componentOfDetails: any = '';
+
+  loaded: boolean = false;
   
   deleteDetail: any = {};
 
@@ -37,6 +39,7 @@ export class ComponentDetailsComponent implements OnInit {
 
         Promise.resolve(this.service.getComponentById(Number(this.id))).then((data) => {
           this.componentOfDetails = data;
+          this.loaded = true;
         })
       })
     });

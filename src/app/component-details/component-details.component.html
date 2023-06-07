@@ -1,45 +1,54 @@
-<div [ngClass]="{'opacity-50': deleteDetail.id}">
-  <div class="mb-6 text-2xl flex justify-center font-bold" *ngIf="componentOfDetails.title">{{componentOfDetails.title}} - {{componentOfDetails.description}} - {{componentOfDetails.componentCode}}</div>
-  <div class="w-full flex justify-between my-8"><div><a (click)="goInHomePage()" class="hover:underline cursor-pointer">&#8592; Backwards</a></div><input class="border border-zinc-500 p-1 rounded" placeholder="Search component..." type="text" (input)="searchInputChange()" [(ngModel)]="searchInput"></div>
-  <table class="table-auto w-full">
-    <thead>
-        <tr class="text-left">
-          <th class="w-1/12">#</th>
-          <th class="p-3 w-2/12">Title</th>
-          <th class="p-3 w-3/12">Parameters</th>
-          <th class="p-3 w-3/12">Notes</th>
-          <th class="p-3 w-1/12">Green limit</th>
-          <th class="p-3 w-1/12">Yellow limit</th>
-          <th class="p-3 w-1/12"></th>
-        </tr>
-    </thead>
-    <tbody *ngIf="arrayOfDetails">
-      <tr *ngFor="let detail of searchedDetails; let i = index" class="hover:bg-gray-100 cursor-pointer">
-        <td class="border-t-2 p-3">{{i + 1}}</td>
-        <td class="border-t-2 p-3">{{detail.description}}</td>
-        <td class="border-t-2 p-3">{{detail.parameter}}</td>
-        <td class="border-t-2 p-3">{{detail.note}}</td>
-        <td class="border-t-2 p-3">{{detail.greenLimit}}</td>
-        <td class="border-t-2 p-3">{{detail.yellowLimit}}</td>
-        <td class="border-t-2 p-3"> <div class="flex w-6"> <img (click)="changeDetail(detail.id)" class="mr-3" src="{{this.location}}assets/icons/pen.png"> <img (click)="deleteDetailFun(detail.id)" src="{{this.location}}assets/icons/recycle-bin.png"> </div> </td>
-      </tr>
-      <tr class="hover:bg-gray-100 cursor-pointer col-span-3" (click)="addComponent()">
-        <td colspan="7" class="border-t-2 p-3">+ Add parameter</td>
-      </tr>
-    </tbody>
-  </table>
+<div *ngIf="!this.loaded; else elseBlock" class="absolute h-full w-full top-0 left-0 flex justify-center items-center">
+  <div class="spinner-border mr-6" role="status">
+      <span class="sr-only">Loading...</span>
+  </div>
+  Loading...
 </div>
 
-<div *ngIf="deleteDetail.id" class="absolute top-0 left-0 w-full h-full flex justify-center items-center">
-  <div class="mx-auto bg-slate-200 p-10 rounded">
-    <div>
-      Are you sure do you want delete detail "<span class="font-bold">{{deleteDetail.description}}</span>"?
-      <br><br>
-      ({{deleteDetail.description}} - {{deleteDetail.parameter}} - {{deleteDetail.note}})
-    </div>
-    <div class="flex justify-between mt-6">
-      <input class="py-3 px-6 border border-red-500 rounded text-red-500 cursor-pointer hover:underline" type="button" value="Yes" (click)="confirmDeleteComponent(deleteDetail.id)">
-      <input class="py-3 px-6 border border-black rounded cursor-pointer" type="button" value="No" (click)="cancelDelete()">
+<ng-template #elseBlock>
+  <div [ngClass]="{'opacity-50': deleteDetail.id}">
+    <div class="mb-6 text-2xl flex justify-center font-bold" *ngIf="componentOfDetails.title">{{componentOfDetails.title}} - {{componentOfDetails.description}} - {{componentOfDetails.componentCode}}</div>
+    <div class="w-full flex justify-between my-8"><div><a (click)="goInHomePage()" class="hover:underline cursor-pointer">&#8592; Backwards</a></div><input class="border border-zinc-500 p-1 rounded" placeholder="Search component..." type="text" (input)="searchInputChange()" [(ngModel)]="searchInput"></div>
+    <table class="table-auto w-full">
+      <thead>
+          <tr class="text-left">
+            <th class="w-1/12">#</th>
+            <th class="p-3 w-2/12">Title</th>
+            <th class="p-3 w-3/12">Parameters</th>
+            <th class="p-3 w-3/12">Notes</th>
+            <th class="p-3 w-1/12">Green limit</th>
+            <th class="p-3 w-1/12">Yellow limit</th>
+            <th class="p-3 w-1/12"></th>
+          </tr>
+      </thead>
+      <tbody *ngIf="arrayOfDetails">
+        <tr *ngFor="let detail of searchedDetails; let i = index" class="hover:bg-gray-100 cursor-pointer">
+          <td class="border-t-2 p-3">{{i + 1}}</td>
+          <td class="border-t-2 p-3">{{detail.description}}</td>
+          <td class="border-t-2 p-3">{{detail.parameter}}</td>
+          <td class="border-t-2 p-3">{{detail.note}}</td>
+          <td class="border-t-2 p-3">{{detail.greenLimit}}</td>
+          <td class="border-t-2 p-3">{{detail.yellowLimit}}</td>
+          <td class="border-t-2 p-3"> <div class="flex w-6"> <img (click)="changeDetail(detail.id)" class="mr-3" src="{{this.location}}assets/icons/pen.png"> <img (click)="deleteDetailFun(detail.id)" src="{{this.location}}assets/icons/recycle-bin.png"> </div> </td>
+        </tr>
+        <tr class="hover:bg-gray-100 cursor-pointer col-span-3" (click)="addComponent()">
+          <td colspan="7" class="border-t-2 p-3">+ Add parameter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="deleteDetail.id" class="absolute top-0 left-0 w-full h-full flex justify-center items-center">
+    <div class="mx-auto bg-slate-200 p-10 rounded">
+      <div>
+        Are you sure do you want delete detail "<span class="font-bold">{{deleteDetail.description}}</span>"?
+        <br><br>
+        ({{deleteDetail.description}} - {{deleteDetail.parameter}} - {{deleteDetail.note}})
+      </div>
+      <div class="flex justify-between mt-6">
+        <input class="py-3 px-6 border border-red-500 rounded text-red-500 cursor-pointer hover:underline" type="button" value="Yes" (click)="confirmDeleteComponent(deleteDetail.id)">
+        <input class="py-3 px-6 border border-black rounded cursor-pointer" type="button" value="No" (click)="cancelDelete()">
+      </div>
     </div>
   </div>
-</div>
+</ng-template>

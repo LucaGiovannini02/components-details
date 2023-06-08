@@ -38,3 +38,9 @@ Questo lavoro e’ stato fatto insieme ad un altro sito caricato sull’altra mi
 Per maggiori informazioni ecco il link alla repo:
 
 [details-by-a-photo](https://github.com/LucaGiovannini02/details-by-a-photo)
+
+---
+
+### Tecnologie con cui è stato sviluppato:
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" width="50"> &emsp; <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png" width="50" /> &emsp; <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.svg.png" width="50"> &emsp; <img src="https://ng-bootstrap.github.io/img/logo-stack.svg" width="50">

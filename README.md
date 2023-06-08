@@ -33,7 +33,7 @@ Link alla sua rep:
 
 ### Note
 
-Questo lavoro e’ stato fatto insieme ad un altro sito caricato sull’altra mia repository. L’altro progetto serviva a visualizzare i parametri in tempo reale, (sempre collegati ai componenti) e essere allertati in caso un di questi avesse oltrepassato il limite definito sempre dall’operatore.
+Questo lavoro e’ stato fatto insieme ad un altro sito caricato sull’altra mia repository. L’altro progetto serviva a visualizzare i parametri in tempo reale, (sempre collegati ai componenti) e essere allertati in caso uno di questi avesse oltrepassato il limite definito sempre dall’operatore.
 
 Per maggiori informazioni ecco il link alla repo:
 

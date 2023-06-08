@@ -1,28 +1,40 @@
-# ComponentsDetails
+# components-details
+## Idea
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
+Questo progetto l’ho sviluppato per una azienda che mi ha chiesto di fare un interfaccia per gestire i componenti presenti in una macchina pelatrice. Questi componenti inoltre hanno anche dei parametri, che potranno anche quelli essere aggiunti tramite sito web.
 
-## Development server
+### Come ho proceduto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Per prima cosa ho costruito una tabella per visualizzare tutti i componenti della macchina pelatrice. 
 
-## Code scaffolding
+![Immagine 2023-06-08 093848](https://github.com/LucaGiovannini02/components-details/assets/58634285/d859647a-0def-4f99-9902-48a0fb820c7e)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Dopo ho aggiunto la possibilita’ di cliccare i componenti per poter vedere tutti i suoi relativi parametri.
 
-## Build
+![Immagine 2023-06-08 094451](https://github.com/LucaGiovannini02/components-details/assets/58634285/ff65beb2-84ef-439d-afa8-82f8c9e64f2d)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+In un secondo momento ho anche inserito l'opzione di modificare, eliminare e ricercare sia di un componente che un suo parametro.
 
-## Running unit tests
+![ricerca elimina modifica](https://github.com/LucaGiovannini02/components-details/assets/58634285/b173a3fb-3476-4270-b0a6-f721933446cd)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Considerazioni finali
 
-## Running end-to-end tests
+Sono stato contento di fare parte di questo progetto, poiche’ l’ho ritenuto un’ottima sfida da affrontare per testare le mie competenze da poco apprese nell’utilizzo di Angular.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Ringraziamenti
 
-## Further help
+Ringrazio l’azienda che mi ha incaricato di questa sfida facendomi affrontare un problema che loro avevano bisogno di risolvere. 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-"# components-details" 
+E ringrazio anche [@Pablososs](https://github.com/Pablososs) per avere contribuito sviluppando la parte back-end per realizzare questo bellissimo progetto
+
+Link alla sua rep:
+
+[https://github.com/Pablososs/api-for-components-management](https://github.com/Pablososs/api-for-components-management)
+
+### Note
+
+Questo lavoro e’ stato fatto insieme ad un altro sito caricato sull’altra mia repository. L’altro progetto serviva a visualizzare i parametri in tempo reale, (sempre collegati ai componenti) e essere allertati in caso un di questi avesse oltrepassato il limite definito sempre dall’operatore.
+
+Per maggiori informazioni ecco il link alla repo:
+
+[details-by-a-photo](https://github.com/LucaGiovannini02/details-by-a-photo)

@@ -7,15 +7,15 @@ Questo progetto l’ho sviluppato per una azienda che mi ha chiesto di fare un i
 
 Per prima cosa ho costruito una tabella per visualizzare tutti i componenti della macchina pelatrice. 
 
-![Immagine 2023-06-08 093848](https://github.com/LucaGiovannini02/components-details/assets/58634285/d859647a-0def-4f99-9902-48a0fb820c7e)
+![Immagine 2023-06-08 093848](https://github.com/LucaGiovannini02/components-details/assets/58634285/78a0f5b3-d183-419b-bd28-4fc2bac27af0)
 
 Dopo ho aggiunto la possibilita’ di cliccare i componenti per poter vedere tutti i suoi relativi parametri.
 
-![Immagine 2023-06-08 094451](https://github.com/LucaGiovannini02/components-details/assets/58634285/ff65beb2-84ef-439d-afa8-82f8c9e64f2d)
+![Immagine 2023-06-08 094451](https://github.com/LucaGiovannini02/components-details/assets/58634285/f61c900b-6d38-4c10-96f8-24ad0f6b48b8)
 
 In un secondo momento ho anche inserito l'opzione di modificare, eliminare e ricercare sia di un componente che un suo parametro.
 
-![ricerca elimina modifica](https://github.com/LucaGiovannini02/components-details/assets/58634285/b173a3fb-3476-4270-b0a6-f721933446cd)
+![ricerca elimina modifica](https://github.com/LucaGiovannini02/components-details/assets/58634285/d20f8ebc-90e2-4937-9fb1-dc122fcdc5c2)
 
 ### Considerazioni finali
 

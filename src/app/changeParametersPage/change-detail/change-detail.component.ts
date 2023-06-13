@@ -22,9 +22,11 @@ export class ChangeDetailComponent implements OnInit {
     this.service.getDetailByIdNew(this.idOfDetail).then((data) => {
       this.detailToChange = data;
 
+      console.log('data: ' + JSON.stringify(data))
+
       this.changeDetailInfo = new FormGroup({
-        parameter: new FormControl(this.detailToChange.description, Validators.required),
-        description: new FormControl(this.detailToChange.parameter, Validators.required),
+        parameter: new FormControl(this.detailToChange.parameter, Validators.required),
+        description: new FormControl(this.detailToChange.description, Validators.required),
         notes: new FormControl(this.detailToChange.note),
         greenLimit: new FormControl(this.detailToChange.greenLimit, [Validators.required, Validators.pattern("^[0.0-9.9]*$")]),
         yellowLimit: new FormControl(this.detailToChange.yellowLimit, [Validators.required,  Validators.pattern("^[0.0-9.9]*$")]),

@@ -3,11 +3,11 @@
         <form class="bg-slate-200 p-6 w-3/4 rounded h-min" [formGroup]="changeDetailInfo" (ngSubmit)="onSubmit()">
             <div class="mb-3">
                 <div class="font-bold">Title*:</div>
-                <div><input type="text" class="mb-3 rounded w-full" formControlName="parameter" placeholder="(Ex. 'Temperature', 'Revolutions per minute' or other...)"></div>
+                <div><input type="text" class="mb-3 rounded w-full" formControlName="description" placeholder="(Ex. 'Temperature', 'Revolutions per minute' or other...)"></div>
             </div>
             <div class="mb-3">
                 <div class="font-bold">Parameter*:</div>
-                <div><input type="text" class="mb-3 rounded w-full" formControlName="description" placeholder="(Ex. 'RPM', 'KW' or other...)"></div>
+                <div><input type="text" class="mb-3 rounded w-full" formControlName="parameter" placeholder="(Ex. 'RPM', 'KW' or other...)"></div>
             </div>
             <div class="mb-3">
                 <div class="font-bold">Green limit:</div>

@@ -53,7 +53,7 @@ export class ComponentsService {
   }
 
   async addComponent(_title: string, _description: string, _componentCode: string, _note: string) {
-    await Promise.resolve(this.http.post(`${this.linkRootApi}api/Components/InsertNewComponent`, {
+    await this.http.post(`${this.linkRootApi}api/Components/InsertNewComponent`, {
       "id": 0,
       "device": _description,
       "task": _title,
@@ -61,7 +61,7 @@ export class ComponentsService {
       "productItem": _componentCode,
       "note": _note,
       "pathimage": ""
-    }, {responseType: 'text'}).subscribe((data) => {console.log(data)}));
+    }, {responseType: 'text'}).toPromise().then((data) => {console.log(data)});
   }
 
   getDetailsOfAnElement(_id: number) {
